@@ -1,11 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
-import { Helmet } from 'react-helmet'
-
-import FeatureCard from '../components/feature-card'
-import Question1 from '../components/question1'
-import './home.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import FeatureCard from '../components/feature-card';
+import Question1 from '../components/question1';
+import './home.css';
 
 const Home = (props) => {
   return (
@@ -50,7 +48,7 @@ const Home = (props) => {
                 <span className="home-nav52 bodySmall">Contact Us</span>
               </nav>
               <div className="home-buttons">
-                <button className="buttonFlat">Login</button>
+                <Link to="/login" className="buttonFlat">Login</Link>
                 <button className="buttonFilled">Register</button>
               </div>
             </div>
@@ -148,7 +146,7 @@ const Home = (props) => {
               </span>
             </span>
             <div className="home-btn-group">
-              <Link to="/readings" className="home-hero-button1 buttonFilled">
+              <Link to="/login" className="home-hero-button1 buttonFilled">
                 Login
               </Link>
               <a href="#FAQ" className="home-hero-button2 buttonFlat">

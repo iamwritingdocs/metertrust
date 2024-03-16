@@ -11,14 +11,14 @@ const App = () => {
 
   const handleCompletion = () => {
     // Triggered by the user after they have presumably completed necessary operations
-    history.push('/readings');
+    history.push('/verify-world-id');
   };
 
   return (
     <div>
       <DynamicContextProvider
         settings={{
-          environmentId: "ID",
+          environmentId: "2762a57b-faa4-41ce-9f16-abff9300e2c9",
           walletConnectors: [EthereumWalletConnectors],
         }}
       >

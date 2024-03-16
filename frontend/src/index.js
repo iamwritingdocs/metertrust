@@ -1,30 +1,29 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
-} from 'react-router-dom'
+} from 'react-router-dom';
 
-import './style.css'
-import Readings from './views/readings'
-import Payment from './views/payment'
-import Home from './views/home'
-import NotFound from './views/not-found'
+import './style.css';
+import Readings from './views/readings';
+import Payment from './views/payment';
+import Home from './views/home';
+import NotFound from './views/not-found';
+import App from './views/App'; // Assuming App has specific logic for the /login route
 
-const App = () => {
-  return (
-    <Router>
-      <Switch>
-        <Route component={Readings} exact path="/readings" />
-        <Route component={Payment} exact path="/payment" />
-        <Route component={Home} exact path="/" />
-        <Route component={NotFound} path="**" />
-        <Redirect to="**" />
-      </Switch>
-    </Router>
-  )
-}
-
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(
+  <Router>
+    <Switch>
+      <Route exact path="/readings" component={Readings} />
+      <Route exact path="/payment" component={Payment} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/login" component={App} /> {/* Ensure this makes sense for your App component */}
+      <Route component={NotFound} />
+      <Redirect to="/" /> {/* Fallback redirect; adjust as needed */}
+    </Switch>
+  </Router>,
+  document.getElementById('app')
+);
